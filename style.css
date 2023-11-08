@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,#51575a,#1f1e20);
+}
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: whitesmoke;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.container .title{
+    
+    padding-bottom: 35px;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #51575a;
+}
+.container.title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg,#51575a,#1f1e20);
+
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user-details .input-box{
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 35px;
+
+}
+.user-details .input-box .details{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline:none;
+    border-radius:5px;
+    border: 1px solid #cac3c3;
+    padding-left: 15px;
+    font-size:16px ;
+    border-bottom-width:2px ;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color:#51575a ;
+}
+
+form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender-details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.gender-details .category label{
+    align-items: center;
+    display: flex;
+}
+.gender-details .category .dot{
+    height:18px ;
+    width: 18px;
+    background: rgb(188, 229, 229);
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three
+{
+    border-color: #d9d9d9;
+    background: #51575a;
+}
+form input[type="radio"]{
+    display: none;
+}
+
+form .button{
+    height: 45px;
+    margin: 45px 0;
+    cursor: pointer;
+}
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color:aliceblue;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background:linear-gradient(135deg,#51575a,#1f1e20) ;
+    cursor: pointer;
+}
+form .button input:hover{
+    background:linear-gradient(-135deg,#51575a,#1f1e20) ;
+
+}
+@media (max-width:584px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        width: 100%;
+        margin-bottom: 15px;
+    
+    }
+    form .gender-details .category{
+        
+        width: 100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+/* Validation */
+.input-box span{
+    bottom: 15px;
+    font-size: 14px;
+    color:rgb(195, 24, 24) ;
+}
+#submit-error{
+    color:rgb(195, 24, 24) ;
+}
+
+.user-details span i{
+    position: relative;
+    color: green;
+}
+
+#message{
+    position: absolute;
+    color: rgb(209, 49, 20);
+    font-size: 15px;
+    display: none;
+}
+
+#cnfmessage{
+    font-size: 15px;
+    display: none;
+}
+
+/* Pop up*/
+.pcontainer{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup{
+    width: 400px;
+    background: #bef088;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%)scale(0.1);
+    text-align: center;
+    padding: 0px 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s,top 0.4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%)scale(1);
+
+}
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow:0 2px 5px rgba(0, 0 , 0, 0.2) ;
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin:30px 0 10px;
+}
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border:none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow:0 5px 5px rgba(0, 0 , 0, 0.2) ;
+
+}

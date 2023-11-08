@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <!-- <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">Registration</div>
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <label class="details">Full name</label>
+                        <input type="text" placeholder="Enter Your Name" id="contact-name" onkeyup="validateName()" >
+                        <span id="name-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">User name</label>
+                        <input type="text" placeholder="Enter Your Username" id="contact-user" onkeyup="validateUser()" >
+                        <span id="user-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Email</label>
+                        <input type="email" placeholder="Enter Your e-mail" id="contact-email" onkeyup="validateEmail()" >
+                        <span id="email-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Phone Number</label>
+                        <input type="tel" placeholder="Enter Your number" id="contact-phone" onkeyup="validatePhone()" >
+                        <span id="phone-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Password</label>
+                        <input type="password" placeholder="Enter Your password" id="password" >
+                        <p id="message">Password is <span id="strenght"></span></p>
+                    </div>
+                    <div class="input-box">
+                        <label class="details">Confirm Password</label>
+                        <input type="password" placeholder="Confirm your password" id="confirm-password" >
+                        <p id="cnfmessage">Passwords <span id="result"></span></p>
+                    </div>
+                </div>
+
+                <div class="gender-details">
+                    <label class="gender-details">Gender</label>
+                    <input type="radio" name="gender" id="dot-1" >
+                    <input type="radio" name="gender" id="dot-2" >
+                    
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Other</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="button" id="button"  onclick="return validateForm(),res();">
+                    <input type="submit" value="Register">
+                    <span id="submit-error"></span>
+                </div>
+            </form>
+        </div>
+         
+        <div class="pcontainer">
+            <div class="popup" id="popup">
+                <img src="tick.png">
+                <h2>Thank You!</h2>
+                <p>Your details has been successfully submitted.</p>
+                <button type="button" onclick="closepopup()">OK</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+
+    </body>
+</html>
